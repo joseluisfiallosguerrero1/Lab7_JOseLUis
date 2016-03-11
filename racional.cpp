@@ -161,15 +161,14 @@ const racional racional::operator /(const racional& r)const{
 }
 ostream& operator<<(ostream& output, const racional& c){
 	
-	
-	if (c.den != c.num){
-		output<< c.num << "/" << c.den;
-	}else if(c.num==0){
-		output<<"0";	
+	if(c.num==0){
+		output<<"0";
 	}else if(c.den==1){
 		output<< c.num;		
-	}else if(c.num==1  && c.den==1){
-		output<<"1";		
+	}else if(c.den==c.num){
+		output<<"1";
+	}else{
+		output<< c.num << "/" << c.den;
 	}
 	
 	return output;
